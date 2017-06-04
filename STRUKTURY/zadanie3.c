@@ -2,13 +2,18 @@
 #include <stdlib.h>
 
 typedef struct{
-  char imie[100];
-  char nazwisko[100];
-  char album[10];
+  char *imie;
+  char *nazwisko;
+  char *album;
 }student_t;
 
 student_t* wypelnij(){
 student_t* student = malloc(sizeof(student_t));
+student->imie = malloc(sizeof(char)*100);
+student->nazwisko = malloc(sizeof(char)*100);
+student->album = malloc(sizeof(char)*10);
+
+
 
 printf("Podaj imie studenta: ");
 scanf("%s",student->imie);
@@ -21,6 +26,9 @@ return student;
 }
 
 void zwolnij_pamiec(student_t *student){
+  free(student->imie);
+  free(student->nazwisko);
+  free(student->album);
   free(student);
 }
 

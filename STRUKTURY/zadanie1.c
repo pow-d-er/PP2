@@ -147,7 +147,7 @@ wczytaj_z_pliku("punkty.txt");
 sortuj_wzgledem_y_malejaco(point);
 sortuj_wzgledem_x_malejaco(point);
 najdalszy = najdalej_od_wszystkich(point);
-printf("Najdalej położony punkt od wszystkich: %d,%d. Odległość do najbliższego punktu: %.2f\n",najdalszy.x,najdalszy.y,najdalszy.max);
+printf("Najdalej położony punkt od wszystkich: (%d,%d). Odległość do najbliższego punktu: %.2f\n",najdalszy.x,najdalszy.y,najdalszy.max);
 
   return 0;
 }
