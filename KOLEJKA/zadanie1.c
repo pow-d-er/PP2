@@ -11,6 +11,7 @@ typedef struct{
 }queue_t;
 
 bool queue_create(queue_t *q, int size){
+  
   q->tab = (int*) malloc(sizeof(int)*size);
   if(q->tab == NULL)  return false;
 
