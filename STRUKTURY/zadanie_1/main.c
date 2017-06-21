@@ -15,10 +15,22 @@ przesun_w_poziomie(&point[5],20);
 przesun_w_pionie(&point[5],20);
 zapisz_do_pliku("punkty.txt",point);
 wczytaj_z_pliku("punkty.txt");
-sortuj_wzgledem_y_malejaco(point);
-sortuj_wzgledem_x_malejaco(point);
+
+printf("Punkty posortowane wzgledem y malejaco: \n");
+for(int i=0; i<10; i++){
+wyswietl(sortuj_wzgledem_y_malejaco(&point[i]));
+printf("\n");
+}
+
+printf("Punkty posortowane wzgledem x malejaco: \n");
+for(int i=0; i<10; i++){
+wyswietl(sortuj_wzgledem_x_malejaco(&point[i]));
+printf("\n");
+}
+
 najdalszy = najdalej_od_wszystkich(point);
-printf("Najdalej położony punkt od wszystkich: (%d,%d). Odległość do najbliższego punktu: %.2f\n",najdalszy.x,najdalszy.y,najdalszy.max);
+printf("Najdalej położony punkt od wszystkich: "); wyswietl(&najdalszy);
+printf("\nOdległość do najbliższego punktu: %.2f\n", najdalszy.max);
 
   return 0;
 }

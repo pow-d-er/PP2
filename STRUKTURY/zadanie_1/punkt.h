@@ -9,7 +9,7 @@
 typedef struct{
   int x;
   int y;
-  double max;
+  double odleglosc;
 }point_t;
 
 
@@ -21,6 +21,6 @@ point_t *wczytaj_z_pliku(const char* path);
 point_t* sortuj_wzgledem_x_malejaco(const point_t *points);
 point_t* sortuj_wzgledem_y_malejaco(const point_t *points);
 point_t sortuj_wzgledem_max_malejaco(const point_t *points);
-point_t najdalej_od_wszystkich(point_t *points);
+void wyswietl(point_t* point);
 
 #endif

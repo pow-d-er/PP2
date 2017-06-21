@@ -73,6 +73,8 @@ point_t* sortuj_wzgledem_y_malejaco(const point_t *points){
           sorted[j+1] = y;
         }
 
+        wyswietl
+
 return sorted;
 }
 
@@ -93,19 +95,25 @@ point_t sortuj_wzgledem_max_malejaco(const point_t *points){
           }
 
 return sorted[0];
-}
+};
 
 point_t najdalej_od_wszystkich(point_t *points){
+point_t* p = malloc(sizeof(point_t));
+p->odleglosc = 0;
 double helper;
 
 for(int i=0; i<10; i++){
-points[i].max = 0;
+points[i].odleglosc = 0;
   for(int j=0; j<10; j++){
     if(j == i) continue;
-    if(points[i].max<(helper = oblicz_odleglosc(&points[i],&points[j]))) points[i].max = helper;
+    points[i].odleglosc = oblicz_odleglosc(&points[i],&points[j]);
   }
 }
 
-return sortuj_wzgledem_max_malejaco(points);
+};
 
-}
+void wyswietl(point_t* point){
+
+  printf("(%d,%d)",point->x, point->y);
+
+};
